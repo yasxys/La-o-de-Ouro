@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Laço de Ouro – Bar e Restaurante | Ituiutaba/MG</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Figtree:wght@400;600;700&display=swap">
+<style>
+:root{--couro:#2b1b12;--couro2:#3a271a;--corda:#c9a66b;--ouro:#e0b04f;--kraft:#dcc6a0;--tinta:#2a1c12;--creme:#f3e8d2;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--couro);color:var(--creme);font:400 1.05rem/1.6 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:"Alfa Slab One",Georgia,serif;font-weight:400;margin:0;line-height:1.1}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ouro);outline-offset:3px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
+header.hero{padding:3.5rem 0 3rem;text-align:center;background:radial-gradient(ellipse at top,var(--couro2),var(--couro) 70%)}
+.selo{width:min(15rem,62vw);margin:0 auto 1.5rem;display:block}
+h1{font-size:clamp(2.6rem,9vw,5rem);color:var(--ouro);letter-spacing:.01em}
+.sub{font-size:1.15rem;max-width:34rem;margin:.9rem auto 0}
+.status{display:inline-block;margin-top:1.2rem;padding:.35rem .9rem;border:2px solid var(--corda);border-radius:2rem;font-weight:600}
+.status.on{border-color:#8fcf7a;color:#b9e8a8}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin-top:1.6rem}
+.btn{display:inline-block;padding:.8rem 1.4rem;border-radius:.4rem;font-weight:700;text-decoration:none;border:2px solid var(--ouro)}
+.btn.p{background:var(--ouro);color:var(--tinta)}
+.btn:hover{background:var(--creme);border-color:var(--creme);color:var(--tinta)}
+.corda{height:14px;background:repeating-linear-gradient(115deg,var(--corda) 0 9px,#8f7240 9px 13px)}
+section{padding:3.5rem 0}
+h2{font-size:clamp(1.8rem,5vw,2.6rem);color:var(--ouro);margin-bottom:1.2rem}
+.cardapio{background:var(--kraft);color:var(--tinta)}
+.cardapio h2{color:var(--tinta)}
+.tabs{display:flex;gap:.5rem;overflow-x:auto;padding-bottom:.6rem;margin-bottom:1.2rem}
+.tabs button{flex:none;font:700 1rem Figtree,sans-serif;padding:.6rem 1rem;border:2px solid var(--tinta);background:transparent;color:var(--tinta);border-radius:.4rem;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--tinta);color:var(--kraft)}
+.nota{margin:0 0 1rem;font-size:.95rem}
+.grupo{margin:0 0 1.6rem}
+.grupo h3{font-size:1.25rem;margin-bottom:.5rem}
+.item{display:flex;align-items:baseline;gap:.5rem;padding:.3rem 0}
+.item .n{font-weight:700}
+.item .pt{flex:1;border-bottom:2px dotted rgba(42,28,18,.55);min-width:1rem;transform:translateY(-.25em)}
+.item .v{font-weight:700;white-space:nowrap}
+.item small,.desc{display:block;font-weight:400;font-size:.9rem;opacity:.85}
+.alc{display:grid;grid-template-columns:1fr auto auto auto;gap:.2rem .9rem;align-items:baseline}
+.alc .h{font-weight:700;text-align:right;font-size:.9rem}
+.alc .p{text-align:right;font-weight:700}
+.cols{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr))}
+.lista{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.6rem}
+.lista li{border:1px solid var(--corda);border-radius:2rem;padding:.35rem .9rem;font-size:.95rem}
+dl{margin:0}dt{font-weight:700;color:var(--ouro)}dd{margin:0 0 .9rem}
+footer{padding:2rem 0 3rem;text-align:center;font-size:.9rem;border-top:1px solid var(--couro2)}
+@media(max-width:34rem){.alc{grid-template-columns:1fr auto}.alc .h.m,.alc .h.g{display:none}}
+</style>
+</head>
+<body>
+<header class="hero">
+<div class="wrap">
+<svg class="selo" viewBox="0 0 200 200" role="img" aria-label="Selo do Laço de Ouro">
+<circle cx="100" cy="100" r="92" fill="none" stroke="#c9a66b" stroke-width="12" stroke-dasharray="7 3"/>
+<circle cx="100" cy="100" r="80" fill="#3a271a" stroke="#f3e8d2" stroke-width="3"/>
+<text x="100" y="95" text-anchor="middle" font-family="Alfa Slab One,Georgia,serif" font-size="38" fill="#e0b04f">LAÇO</text>
+<text x="100" y="118" text-anchor="middle" font-family="Figtree,sans-serif" font-size="14" fill="#f3e8d2">de</text>
+<text x="100" y="152" text-anchor="middle" font-family="Alfa Slab One,Georgia,serif" font-size="38" fill="#e0b04f">OURO</text>
+</svg>
+<h1>Laço de Ouro</h1>
+<p class="sub">Bar e Restaurante em Ituiutaba. Onde a comida é uma verdadeira paixão.</p>
+<div class="status" id="status">Segunda a sábado, 10h30 às 14h e 18h às 23h</div>
+<div class="cta">
+<a class="btn p" href="https://app.izfood.com.br/lacodeouro">Pedir pelo iFood</a>
+<a class="btn" href="tel:+553432682605">Ligar (34) 3268-2605</a>
+<a class="btn" href="#cardapio">Ver cardápio</a>
+</div>
+</div>
+</header>
+<div class="corda" aria-hidden="true"></div>
+
+<section id="cardapio" class="cardapio">
+<div class="wrap">
+<h2>Cardápio</h2>
+<div class="tabs" role="tablist" aria-label="Categorias do cardápio" id="tabs"></div>
+<div id="painel" role="tabpanel" tabindex="0"></div>
+</div>
+</section>
+<div class="corda" aria-hidden="true"></div>
+
+<section>
+<div class="wrap">
+<h2>Como funciona</h2>
+<div class="cols">
+<div>
+<dl>
+<dt>Endereço</dt><dd>Av. Nivaldo Inácio Moreira, nº 1326, Ituiutaba/MG<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Av.+Nivaldo+In%C3%A1cio+Moreira+1326+Ituiutaba+MG">Abrir no Google Maps</a></dd>
+<dt>Horário</dt><dd>Segunda a sábado<br>10h30 às 14h e 18h às 23h</dd>
+<dt>Telefone</dt><dd><a href="tel:+553432682605">(34) 3268-2605</a></dd>
+<dt>Redes</dt><dd><a href="https://www.instagram.com/lacodeouroitba">@lacodeouroitba no Instagram</a></dd>
+</dl>
+</div>
+<div>
+<h3 style="font-size:1.2rem;margin-bottom:.7rem">Atendimento</h3>
+<ul class="lista">
+<li>Refeição no local</li><li>Entrega</li><li>Entrega sem contato</li><li>Para viagem</li><li>Aceita reservas</li>
+</ul>
+<h3 style="font-size:1.2rem;margin:1.3rem 0 .7rem">Para quem vai</h3>
+<ul class="lista">
+<li>Bom para grupos</li><li>Bom para ir com crianças</li><li>Ambiente casual e tranquilo</li><li>Almoço e jantar</li>
+</ul>
+</div>
+<div>
+<h3 style="font-size:1.2rem;margin-bottom:.7rem">Comodidades</h3>
+<ul class="lista">
+<li>Entrada, assento e banheiro acessíveis para cadeirantes</li><li>Estacionamento gratuito na rua</li><li>Cartão de crédito e débito</li><li>Pagamento por aproximação (NFC)</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<footer><div class="wrap">Laço de Ouro Bar e Restaurante · Av. Nivaldo Inácio Moreira, 1326 · Ituiutaba/MG<br>Valores sujeitos a alteração. Confirme pelo telefone ou pelo iFood.</div></footer>
+
+<script>
+var M=[
+["Pratos executivos",[
+["note","Todos acompanham arroz branco, feijão caldo ou tropeiro, salada simples e batata frita."],
+["Coxão mole",27],["Filé de frango",27],["Lombo",27],["Omelete com queijo",27],["Strogonoff filé de frango",30],["Strogonoff filé mignon",35],["Frango empanado",27],["Comercial",30,"Todas as guarnições separadas, indicado para 1 pessoa"],["Ovo frito",2]]],
+["À la carte",[
+["note","Preços: individual, médio (M) e grande (G)."],
+["alc","Filé à parmegiana",50,130,170,"Filé à milanesa ao molho de tomate, batata frita e arroz branco"],
+["alc","Diplomata",50,130,170,"Filé recheado com presunto e mussarela, arroz à milanesa, banana frita e legumes na manteiga"],
+["alc","Filé madeira",50,130,170,"Filé grelhado ao molho madeira, arroz branco, batata frita e legumes na manteiga"],
+["alc","Filé americana",50,130,170,"Grelhado com bacon, coberto com queijo, arroz à milanesa e batata frita"],
+["alc","Granadine",50,130,170,"Grelhado com bacon, arroz à grega, banana frita e batata frita"],
+["alc","Com fritas",45,130,170,"Grelhada, batata frita, feijão tropeiro e arroz branco"],
+["alc","A cavalo",50,130,170,"Grelhado, salada simples, batata frita, arroz branco e ovos fritos"],
+["alc","A brasileira",45,130,170,"Grelhado, arroz à grega, feijão tropeiro, vinagrete e batata frita"],
+["alc","Tilápia à grega",45,125,165,"Tilápia, batata frita e arroz à grega"],
+["alc","Tilápia completa",35,125,165,"Tilápia, arroz branco, feijão tropeiro, vinagrete"]]],
+["Grill completo",[
+["note","Para compartilhar."],
+["Grill completo",169,"Salada simples, vinagrete, bolinho de arroz, torresmo, arroz branco, feijão tropeiro e mandioca cozida"]]],
+["Saladas e porções",[
+["note","Preços da porção grande (G)."],
+["Salada Ouro",65,"Alface, tomate, cenoura, cebola, salaminho, presunto, mussarela, azeitona e ovos"],
+["Salada simples",30,"Alface, tomate, cenoura, cebola e azeitona"],
+["Salaminho / azeitona",30],
+["Na chapa com queijo",110,"Filé mignon, picanha, contra filé, filé de frango ou lombo. Acompanha mandioca, tomate, cebola e coberto com queijo"],
+["A palito",100,"Filé mignon, picanha, contra filé, filé de frango ou lombo. Acompanha mandioca, tomate e cebola"],
+["Torresmo com mandioca",50],["Bolinho de arroz",28],["Bolinho de mandioca e carne seca",30],["Bolinho de queijo",30],["Mini maia",35],["Batata frita",28],["Batata com cheddar e bacon",35],["Frango a passarinho",40],["Mandioca frita",28],["Quibe com queijo",30],["Iscas de tilápia",50],["Iscas de frango",45],
+["Mix fritas",70,"Quantidades variadas de torresmo, quibe, bolinho de arroz, bolinho de carne seca e batata frita"],
+["Caldos",28,"Consultar disponibilidade"]]],
+["Bebidas",[
+["h","Cervejas"],["Skol / Brahma",12],["Original / Budweiser",15],["Stella",16],["Spaten",15],["Antarctica Boa",12],["Long neck",10],
+["h","Sem álcool"],["Refrigerante lata / KS",6],["Refrigerante 1 L",10],["Refrigerante 2 L",15],["Água com gás",4],["Água sem gás",3],["Sprite Lemon",8],["Energético",15],["Copo especial",2],["Copo com gelo",1],
+["h","Drinks e doses"],["Caipirinha",16],["Caipivodka",18],["Campari",15],["Whisky",15],["Cachaça da casa",5],["CDB",3,"Gelo, limão e sal"],
+["h","Sucos"],["note","Laranja, limão, maracujá, abacaxi com hortelã, abacaxi, caju e morango."],["Copo / lata",8],["Jarra média",20]]]
+];
+var R=function(v){return "R$ "+v};
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function render(i){
+  var p=document.getElementById("painel");p.textContent="";
+  M[i][1].forEach(function(r){
+    if(r[0]==="note"){p.appendChild(el("p","nota",r[1]));return}
+    if(r[0]==="h"){p.appendChild(el("h3","",r[1]));return}
+    var d=el("div","item");
+    if(r[0]==="alc"){
+      d=el("div","grupo");
+      var g=el("div","alc");
+      g.appendChild(el("span","n",r[1]));
+      [r[2],r[3],r[4]].forEach(function(v,k){var s=el("span","p",R(v));g.appendChild(s)});
+      d.appendChild(g);d.appendChild(el("span","desc",r[5]));p.appendChild(d);return}
+    var l=el("div","");l.style.flex="1";
+    var n=el("span","n",r[0]);l.appendChild(n);
+    if(r[2])l.appendChild(el("small","",r[2]));
+    d.appendChild(l);d.appendChild(el("span","pt"));d.appendChild(el("span","v",R(r[1])));
+    p.appendChild(d);
+  });
+}
+var T=document.getElementById("tabs");
+M.forEach(function(m,i){
+  var b=el("button","",m[0]);b.setAttribute("role","tab");b.setAttribute("aria-selected",i===0);
+  b.onclick=function(){[].forEach.call(T.children,function(c){c.setAttribute("aria-selected",c===b)});render(i)};
+  T.appendChild(b);
+});
+render(0);
+(function(){
+  var n=new Date(),d=n.getDay(),m=n.getHours()*60+n.getMinutes(),s=document.getElementById("status");
+  var aberto=d>=1&&d<=6&&((m>=630&&m<840)||(m>=1080&&m<1380));
+  if(aberto){s.classList.add("on");s.textContent="Aberto agora · fecha às "+(m<840?"14h":"23h")}
+})();
+</script>
+</body>
+</html>
